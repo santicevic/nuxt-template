@@ -1,22 +1,35 @@
-# palagruza-web
+# nuxt-template
 
 > 
 
 ## Build Setup
 
+Create the following .env file in the root directory
 ```bash
-# install dependencies
+BASE_URL=http://localhost:3000
+
+// DB SETUP
+DB_HOST = 127.0.0.1
+DB_USER = <USER>
+DB_PASSWORD = <PASSWORD>
+DB_NAME = <DB_NAME>
+
+// AUTH SETUP
+SALT_ROUNDS = <NUMBER OD SALT ROUNDS>
+JWT_SECRET = <SECRET>
+
+
+// SEED USER
+SEED_EMAIL = user@gmail.com
+SEED_PASSWORD = password
+```
+
+Run the following commands in terminal
+```bash
 $ npm install
-
-# serve with hot reload at localhost:3000
+$ sequelize db:migrate
+$ sequelize db:seed:all
 $ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

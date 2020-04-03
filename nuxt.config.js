@@ -42,7 +42,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
@@ -57,5 +58,25 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/api/auth/login',
+            method: 'post',
+            propertyName: 'token'
+          },
+          user: { url: '/api/auth/user', method: 'get', propertyName: false }
+        }
+      }
+    },
+    redirect: {
+      login: '/admin/login',
+      logout: '/',
+      callback: '/admin/login',
+      home: '/admin'
+    }
   }
 };
