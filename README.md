@@ -27,8 +27,8 @@ SEED_PASSWORD = password
 Run the following commands in terminal
 ```bash
 $ npm install
-$ sequelize db:migrate
-$ sequelize db:seed:all
+$ npx sequelize db:migrate
+$ npx sequelize db:seed:all
 $ npm run dev
 ```
 

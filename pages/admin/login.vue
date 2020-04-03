@@ -16,8 +16,8 @@ export default {
   },
   data() {
     return {
-      email: 'sergije@gmail.com',
-      password: 'volintehajduce'
+      email: '',
+      password: ''
     };
   },
   methods: {
